@@ -1,0 +1,8 @@
+---
+- name: Harden Ubuntu server
+  hosts: localhost
+  connection: local
+  become: true
+  roles:
+    - firewall
+

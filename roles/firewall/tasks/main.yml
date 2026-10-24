@@ -1,0 +1,15 @@
+---
+- name: Set default policy to deny incoming traffic
+  community.general.ufw:
+    direction: incoming
+    policy: deny
+
+- name: Allow SSH before enabling the firewall
+  community.general.ufw:
+    rule: allow
+    port: "22"
+    proto: tcp
+
+- name: Enable the firewall
+  community.general.ufw:
+    state: enabled
