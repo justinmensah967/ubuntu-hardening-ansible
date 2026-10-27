@@ -6,4 +6,4 @@
   roles:
     - firewall
     - accounts
-
+    - fail2ban
