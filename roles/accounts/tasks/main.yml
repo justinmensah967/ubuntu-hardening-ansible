@@ -1,0 +1,24 @@
+---
+- name: Set maximum password age to 90 days
+  ansible.builtin.lineinfile:
+    path: /etc/login.defs
+    regexp: '^PASS_MAX_DAYS'
+    line: 'PASS_MAX_DAYS   90'
+
+- name: Set minimum password age to 1 day
+  ansible.builtin.lineinfile:
+    path: /etc/login.defs
+    regexp: '^PASS_MIN_DAYS'
+    line: 'PASS_MIN_DAYS   1'
+
+- name: Set password expiry warning to 7 days
+  ansible.builtin.lineinfile:
+    path: /etc/login.defs
+    regexp: '^PASS_WARN_AGE'
+    line: 'PASS_WARN_AGE   7'
+
+- name: Set stricter default umask
+  ansible.builtin.lineinfile:
+    path: /etc/login.defs
+    regexp: '^UMASK'
+    line: 'UMASK           027'
