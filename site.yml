@@ -8,3 +8,5 @@
     - accounts
     - fail2ban
     - updates
+    - sysctl
+
